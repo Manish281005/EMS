@@ -20,19 +20,35 @@ Backend: PHP
 Database: MySQL
 JavaScript: For interactivity and ticket download functionality
 Installation
-Clone the repository to your local machine:
+1.Clone the repository to your local machine:
+git clone https://github.com/your-username/event-management-system.git
 
-Move the project to your web server directory (e.g., htdocs for XAMPP):
+2.Move the project to your web server directory (e.g., htdocs for XAMPP):
+mv event-management-system /path/to/htdocs/EVE
 
-Import the database:
+3.Import the database:
 
 Open phpMyAdmin.
 Create a new database named event_management.
 Import the sql.txt file provided in the project.
-Update the database connection:
 
+4.Update the database connection:
 Open db.php and update the database credentials:
-Start your local server (e.g., XAMPP or WAMP) and navigate to:
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "event_management";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+5.Start your local server (e.g., XAMPP or WAMP) and navigate to:
+http://localhost/EVE/
 
 Usage
 For Users:
@@ -45,16 +61,37 @@ Register as an organizer.
 Log in to your organizer dashboard.
 Create events and manage tickets.
 View event analytics and manage your events.
+
 File Structure
+EVE/
+├── assets/
+│   └── images/          # Contains logo and team member images
+├── user/
+│   ├── dashboard.php    # User dashboard
+│   ├── book_ticket.php  # Ticket booking page
+├── organiser/
+│   ├── dashboard.php    # Organizer dashboard
+│   ├── create_event.php # Create new events
+│   ├── manage_tickets.php # Manage tickets for events
+│   ├── edit_event.php   # Edit event details
+│   ├── delete_event.php # Delete an event
+├── index.php            # Home page
+├── login.php            # Login page
+├── register.php         # Registration page
+├── about.php            # About Us page
+├── db.php               # Database connection file
+└── sql.txt              # SQL file for database setup
+
 Screenshots
 Home Page
-Home Page
+![Screenshot 2025-05-04 221007](https://github.com/user-attachments/assets/3add0fc0-5367-475d-9153-949fb765e8bf)
 
 User Dashboard
-User Dashboard
+![Screenshot 2025-05-04 221152](https://github.com/user-attachments/assets/6da6ced3-14e7-4dfb-988a-b4f39b64f7ce)
 
 Organizer Dashboard
-Organizer Dashboard
+![Screenshot 2025-05-04 220902](https://github.com/user-attachments/assets/decc5f39-f798-4dc5-910a-ed6388b4523e)
+
 
 License
 This project is licensed under the MIT License. See the LICENSE file for details.
