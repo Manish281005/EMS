@@ -1,0 +1,46 @@
+CREATE DATABASE event_management,
+USE event_management,
+CREATE TABLE User (
+    User_ID INT AUTO_INCREMENT PRIMARY KEY,
+    User_Name VARCHAR(255),
+    User_Email VARCHAR(255) UNIQUE,
+    User_Number VARCHAR(20),
+    User_DOB DATE,
+    User_Password VARCHAR(255)
+);
+
+CREATE TABLE Organiser (
+    Organiser_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Organiser_Name VARCHAR(255),
+    new_column VARCHAR(255)
+);
+
+CREATE TABLE Events (
+    Event_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Event_Name VARCHAR(255),
+    Event_Details TEXT,
+    Event_Address VARCHAR(255),
+    Event_City VARCHAR(255),
+    Event_Time DATETIME,
+    Organiser_ID INT,
+    FOREIGN KEY (Organiser_ID) REFERENCES Organiser(Organiser_ID)
+);
+
+CREATE TABLE Ticket (
+    Ticket_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Ticket_Name VARCHAR(255),
+    Ticket_Quantity INT,
+    Ticket_Price DECIMAL(10,2),
+    Event_ID INT,
+    FOREIGN KEY (Event_ID) REFERENCES Events(Event_ID)
+);
+
+ALTER TABLE Organiser
+DROP COLUMN new_column,
+ADD COLUMN Organiser_Email VARCHAR(255) UNIQUE,
+ADD COLUMN Organiser_Password VARCHAR(255);
+
+-- Remove Event_Date reference and use Event_Time for both date and time
+ALTER TABLE Events
+DROP COLUMN Event_Date;
+
