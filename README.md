@@ -63,26 +63,7 @@ Create events and manage tickets.
 View event analytics and manage your events.
 
 File Structure
-----
-EVE/
-├── assets/
-│   └── images/          # Contains logo and team member images
-├── user/
-│   ├── dashboard.php    # User dashboard
-│   ├── book_ticket.php  # Ticket booking page
-├── organiser/
-│   ├── dashboard.php    # Organizer dashboard
-│   ├── create_event.php # Create new events
-│   ├── manage_tickets.php # Manage tickets for events
-│   ├── edit_event.php   # Edit event details
-│   ├── delete_event.php # Delete an event
-├── index.php            # Home page
-├── login.php            # Login page
-├── register.php         # Registration page
-├── about.php            # About Us page
-├── db.php               # Database connection file
-└── sql.txt              # SQL file for database setup
-----
+![image](https://github.com/user-attachments/assets/c1ce807d-84fd-4e14-82d1-11a519b3c4c8)
 
 Screenshots
 Home Page
