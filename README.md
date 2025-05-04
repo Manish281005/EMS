@@ -63,6 +63,7 @@ Create events and manage tickets.
 View event analytics and manage your events.
 
 File Structure
+----
 EVE/
 ├── assets/
 │   └── images/          # Contains logo and team member images
@@ -81,6 +82,7 @@ EVE/
 ├── about.php            # About Us page
 ├── db.php               # Database connection file
 └── sql.txt              # SQL file for database setup
+----
 
 Screenshots
 Home Page
